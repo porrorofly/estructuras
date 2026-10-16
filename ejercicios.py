@@ -1,4 +1,4 @@
-# 1. Bucle for: Sintaxis basica (iterar listas)
+""" # 1. Bucle for: Sintaxis basica (iterar listas)
 # Enunciado: Dada una lista de precios de un carrito de la compra [15.50. 20.0. 35.75, 10.0],
 # calcula el total iterando sobre la lista (sin usar la función sum0).
 compras =[15.50, 20.0, 35.75, 10.0]
@@ -61,27 +61,81 @@ print(largos)
 contraseña=input("Introduce la contraseña ")
 while(contraseña!="python123"):
     contraseña=input("Introduce la contraseña ")
-print("contraseña correcta")
+print("contraseña correcta") """
 # 10. Contador y acumulador en while
 # Enunciado: Escribe un programa que pida números al usuario sin parar y los vaya sumando. El
 # bucle debe terminar cuando la suma total (acumulador) supere el valor de 50. Muestra cuántos
 # números se ingresaron (contador).
-
+""" 
+contador=0
+suma=0
+while suma<=50:
+    numero=int(input("introduce un numero: "))
+    suma=suma+numero
+    contador+=1
+print(f"Has introducido {contador} veces")
 # 11. Bucle while con condiciones complejas
 # Enunciado: Simula el login de un cajero. El usuario debe ingresar su PIN ("1234"). El bucle
 # termina cuando acierta el PIN o cuando se superan los 3 intentos máximos permitidos.
+PIN = "1234"
+index = 0
+
+while index < 3:
+    request = input("Introduce su código: ")
+    if request == PIN:
+        print("¡Acceso concedido!")
+        break
+    else:
+        index += 1  
+
+ """
 # 12. Bucle while infinito (con break)
 # Enunciado: Crea un bucle infinito que funcione como una calculadora de sumas continuas. El
 # programa pide un número. Si el usuario escribe "salir", el bucle se interrumpe con break y
 # muestra el total.
+#numero=input("Introduce el numero o salir para salir")
+suma=0
+num=0
+while num!="salir":
+    num=input("Introduce el numero o salir para salir ")
+    if num=="salir":
+        break
+    else:
+        suma+=int(num)
+    
+    
+    
+print(f"Total:{suma}")
+    
 # 13. Uso de continue en bucles
 # Enunciado: Itera los números del 1 al 10 e imprímelos. Sin embargo, si el número es divisible
 # por 3 (ej. 3, 6, 9), utiliza continue para saltarlo y no imprimirlo.
+for i in range(11):
+    if i%3==0:
+        continue
+    else:
+        print(f"{i}")
 # 14. Uso de else en bucles
 # Enunciado: Busca el número 99 en la lista [10, 20, 30, 40]. Si lo encuentras, imprime
 # "¡Encontrado!" y sal del bucle. Si terminas de recorrer la lista y no está, usa el bloque else del
 # bucle para imprimir "Número no encontrado".
+lista=[10, 20, 30, 40]
+for i in range(len(lista)):
+    if lista[i]==99:
+        print("¡Encontrado!")
+        break
+    else:
+        print("Número no encontrado")
+    
+    
 # 15. Bucles for con diccionarios
 # Enunciado: Tienes el inventario de una tienda de frutas en un diccionario: {"manzanas": 50,
 # "peras": 30, "naranjas": 20}. Itera sobre el diccionario e imprime tanto la clave como el valor en
 # una frase descriptiva.
+inventario={"manzanas": 50,"peras": 30, "naranjas": 20}
+for e,i in inventario.items():
+    print(f"Fruta: {e} Stock:{i}")
+for e in inventario.keys():
+    print(e)
+for e in inventario.values():
+    print(e)
